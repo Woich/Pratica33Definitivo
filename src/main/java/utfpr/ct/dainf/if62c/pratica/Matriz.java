@@ -46,12 +46,12 @@ public class Matriz {
      * @return A soma das matrizes
      */
     public Matriz soma(Matriz m) {
-        Matriz soma = new Matriz(mat.length, mat[0].length);
+        Matriz soma = new Matriz(this.mat.length, this.mat[0].length);
         double[][] som = soma.getMatriz();
         double[][] matr = m.getMatriz();
-        for(int i=0 ; i<mat.length ; i++){
-            for(int j=0 ; j<mat[0].length ; j++){
-                som[i][j] = mat[i][j] + matr[i][j];
+        for(int i=0 ; i<this.mat.length ; i++){
+            for(int j=0 ; j<this.mat[0].length ; j++){
+                som[i][j] = this.mat[i][j] + matr[i][j];
                 
             }
         }
@@ -65,16 +65,16 @@ public class Matriz {
      * @return O produto das matrizes
      */
     public Matriz prod(Matriz m) {
-        Matriz prod = new Matriz(mat.length, m.mat[0].length);
+        Matriz prod = new Matriz(this.mat.length, m.mat[0].length);
         
         
-        for(int i=0 ; i<mat.length ; i++){
+        for(int i=0 ; i<this.mat.length ; i++){
             for(int j=0 ; j < m.mat[0].length ; j++){
                 
                 prod.mat[i][j]=0;
                 
-                for(int x=0 ; x< mat[0].length ; x++){
-                    prod.mat[i][j] += mat[i][x] * m.mat[x][j];
+                for(int x=0 ; x< this.mat[0].length ; x++){
+                    prod.mat[i][j] += this.mat[i][x] * m.mat[x][j];
                 }
                 
             }
