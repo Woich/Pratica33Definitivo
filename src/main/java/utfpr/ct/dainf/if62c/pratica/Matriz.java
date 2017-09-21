@@ -47,6 +47,7 @@ public class Matriz {
      */
     public Matriz soma(Matriz m) {
         Matriz soma = new Matriz(this.mat.length, this.mat[0].length);
+        
         double[][] som = soma.getMatriz();
         double[][] matr = m.getMatriz();
         for(int i=0 ; i<this.mat.length ; i++){
