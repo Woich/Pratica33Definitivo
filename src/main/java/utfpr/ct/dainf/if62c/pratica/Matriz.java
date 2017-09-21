@@ -1,4 +1,4 @@
-package utfpr.ct.dainf.if62c.exemplos;
+package utfpr.ct.dainf.if62c.pratica;
 
 /**
  * Representa uma matriz de valores {@code double}.
@@ -46,7 +46,17 @@ public class Matriz {
      * @return A soma das matrizes
      */
     public Matriz soma(Matriz m) {
-        throw new UnsupportedOperationException("Soma de matrizes não implementada.");
+        Matriz soma = new Matriz(mat.length, mat[0].length);
+        double[][] som = soma.getMatriz();
+        double[][] matr = m.getMatriz();
+        for(int i=0 ; i<mat.length ; i++){
+            for(int j=0 ; j<mat[0].length ; j++){
+                som[i][j] = mat[i][j] + matr[i][j];
+                
+            }
+        }
+        
+        return soma;
     }
 
     /**
@@ -55,7 +65,22 @@ public class Matriz {
      * @return O produto das matrizes
      */
     public Matriz prod(Matriz m) {
-        throw new UnsupportedOperationException("Produto de matrizes não implementado.");
+        Matriz prod = new Matriz(mat.length, m.mat[0].length);
+        
+        
+        for(int i=0 ; i<mat.length ; i++){
+            for(int j=0 ; j < m.mat[0].length ; j++){
+                
+                prod.mat[i][j]=0;
+                
+                for(int x=0 ; x< mat[0].length ; x++){
+                    prod.mat[i][j] += mat[i][x] * m.mat[x][j];
+                }
+                
+            }
+        }
+        
+        return prod;
     }
 
     /**
